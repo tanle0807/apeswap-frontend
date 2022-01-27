@@ -457,6 +457,8 @@ const Farms: React.FC = () => {
         farmsLP.find((farm) => farm.pid === BANANA_POOL_PID)?.tokenPriceVsQuote || 0,
       )
       let farmsToDisplayWithAPR: FarmWithStakedValue[] = farmsToDisplay.map((farm) => {
+        console.log('bananaPriceVsBNB',bananaPriceVsBNB.toJSON());
+        
         if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken) {
           return farm
         }

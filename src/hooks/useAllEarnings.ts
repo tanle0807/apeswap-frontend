@@ -32,7 +32,7 @@ const useAllEarnings = () => {
         }))
 
         const res = await multicall(multicallContract, masterChefABI, calls)
-
+        
         setBalance(res)
       } catch (e) {
         console.warn(e)
@@ -57,7 +57,7 @@ const useAllEarnings = () => {
     }
 
     if (account) {
-      if (chainId === CHAIN_ID.BSC) {
+      if (chainId === CHAIN_ID.BSC || chainId === CHAIN_ID.BSC_TESTNET) {
         fetchAllBSCBalances()
       }
       if (chainId === CHAIN_ID.MATIC) {

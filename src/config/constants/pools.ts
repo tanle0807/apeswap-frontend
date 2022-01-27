@@ -10,7 +10,7 @@ const pools: PoolConfig[] = [
     stakingToken: tokens.banana,
     rewardToken: tokens.banana,
     contractAddress: {
-      97: '0xbbC5e1cD3BA8ED639b00927115e5f0e0040aA613', // MasterApe
+      97: '0x358E7e5285262ca684c2c95ed110d8D843F9A5c3', // MasterApe
       56: '0x5c8D727b265DBAfaba67E050f2f739cAeEB4A6F9',
     },
     poolCategory: PoolCategory.CORE,

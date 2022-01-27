@@ -90,7 +90,7 @@ export const useFetchPublicData = () => {
   const dispatch = useDispatch()
   const { slowRefresh } = useRefresh()
   useEffect(() => {
-    if (chainId === CHAIN_ID.BSC) {
+    if (chainId === CHAIN_ID.BSC || chainId === CHAIN_ID.BSC_TESTNET) {
       dispatch(fetchFarmsPublicDataAsync(chainId))
       dispatch(fetchPoolsPublicDataAsync(chainId, tokenPrices))
     }
@@ -295,8 +295,12 @@ export const useTvl = (): BigNumber => {
 // Prices
 
 export const usePriceBnbBusd = (): BigNumber => {
-  const pid = 3 // BUSD-BNB LP
-  const farm = useFarmFromPid(pid)
+  const pid = 4 // BUSD-BNB LP
+  const farm = useFarmFromPid(pid);
+  // console.log('farm',farm);
+  
+  // console.log(' farm.tokenPriceVsQuote ? new BigNumber(1).div(farm.tokenPriceVsQuote) : ZERO', farm.tokenPriceVsQuote ? new BigNumber(1).div(farm.tokenPriceVsQuote) : ZERO);
+  
   return farm.tokenPriceVsQuote ? new BigNumber(1).div(farm.tokenPriceVsQuote) : ZERO
 }
 
@@ -320,7 +324,8 @@ export const usePriceGnanaBusd = (): BigNumber => {
   */
 
 export const usePriceEthBusd = (): BigNumber => {
-  const pid = 5 // ETH-BNB LP
+  // const pid = 5 // ETH-BNB LP
+  const pid = 4 // ETH-BNB LP
   const bnbPriceUSD = usePriceBnbBusd()
   const farm = useFarmFromPid(pid)
   return farm.tokenPriceVsQuote ? bnbPriceUSD.times(farm.tokenPriceVsQuote) : ZERO

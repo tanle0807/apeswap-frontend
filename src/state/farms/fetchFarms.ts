@@ -52,10 +52,13 @@ const fetchFarms = async (chainId: number) => {
 
       const [tokenBalanceLP, quoteTokenBlanceLP, lpTokenBalanceMC, lpTotalSupply, tokenDecimals, quoteTokenDecimals] =
         await multicall(multicallContract, erc20, calls)
+      console.log('quoteTokenBlanceLP',new BigNumber(quoteTokenBlanceLP).toJSON());
 
+      
+      
       // Ratio in % a LP tokens that are in staking, vs the total number in circulation
       const lpTokenRatio = new BigNumber(lpTokenBalanceMC).div(new BigNumber(lpTotalSupply))
-
+      // console.log('lpTokenRatio',lpTokenRatio.toJSON());
       // Total value in staking in quote token value
       const lpTotalInQuoteToken = new BigNumber(quoteTokenBlanceLP)
         .div(new BigNumber(10).pow(18))
@@ -64,7 +67,8 @@ const fetchFarms = async (chainId: number) => {
 
       // Total value in pool in quote token value
       const totalInQuoteToken = new BigNumber(quoteTokenBlanceLP).div(new BigNumber(10).pow(18)).times(new BigNumber(2))
-
+      
+      
       // Amount of token in the LP that are considered staking (i.e amount of token * lp ratio)
       const tokenAmount = new BigNumber(tokenBalanceLP).div(new BigNumber(10).pow(tokenDecimals)).times(lpTokenRatio)
       const quoteTokenAmount = new BigNumber(quoteTokenBlanceLP)
@@ -93,7 +97,12 @@ const fetchFarms = async (chainId: number) => {
       } catch (error) {
         console.warn('Error fetching farm', error, farmConfig)
       }
-
+      console.log(' tokenAmount.toJSON()', tokenAmount.toJSON());
+      console.log(' quoteTokenAmount.toJSON()', quoteTokenAmount.toJSON());
+      console.log(' totalInQuoteToken.toJSON(),', totalInQuoteToken.toJSON());
+      console.log(' lpTotalInQuoteToken.toJSON()', lpTotalInQuoteToken.toJSON());
+      console.log(' quoteTokenAmount.div(tokenAmount).toJSON()', quoteTokenAmount.div(tokenAmount).toJSON());
+      
       return {
         ...farmConfig,
         tokenAmount: tokenAmount.toJSON(),

@@ -1,19 +1,19 @@
 export default {
   banana: {
-    97: '0x4Fb99590cA95fc3255D9fA66a1cA46c43C34b09a',
+    97: '0x84D58f31E07534A581cc09a1D140d77aE9546426',
     56: '0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95',
     137: '0x5d47baba0d66083c52009271faf3f50dcc01023c',
   },
   syrup: {
-    97: '0xAf1B22cBDbB502B2089885bcd230255f8B80243b',
+    97: '0x392134F563D738fa6Df8987a8F3d9847D5d091a4',
     56: '0x86Ef5e73EDB2Fea111909Fe35aFcC564572AcC06',
   },
   masterChef: {
-    97: '0xbbC5e1cD3BA8ED639b00927115e5f0e0040aA613',
+    97: '0x358E7e5285262ca684c2c95ed110d8D843F9A5c3',
     56: '0x5c8D727b265DBAfaba67E050f2f739cAeEB4A6F9',
   },
   sousChef: {
-    97: '0xAf1B22cBDbB502B2089885bcd230255f8B80243b',
+    97: '0x392134F563D738fa6Df8987a8F3d9847D5d091a4',
     56: '0x54aff400858Dcac39797a81894D9920f16972D1D',
   },
   nativeWrapped: {
@@ -34,7 +34,7 @@ export default {
     137: '0x95028E5B8a734bb7E2071F96De89BABe75be9C8E',
   },
   busd: {
-    97: '0xed24fc36d5ee211ea25a80239fb8c4cfd80f12ee',
+    97: '0x98649fde88981790b574c9A6066004D5170Bf3EF',
     56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
   },
   wbnb: {
@@ -83,7 +83,7 @@ export default {
   },
   apePriceGetter: {
     56: '0x5e545322b83626c745FE46144a15C00C94cBD803',
-    97: '',
+    97: '0xAb90c30CAeB1c5B68996f0B2Fb6d4cD3aFdD6cd7',
     137: '0x05D6C73D7de6E02B3f57677f849843c03320681c',
   },
   miniApeV2: {

@@ -55,7 +55,7 @@ const useFarmsWithBalance = () => {
     }
 
     if (account) {
-      if (chainId === CHAIN_ID.BSC) {
+      if (chainId === CHAIN_ID.BSC || chainId === CHAIN_ID.BSC_TESTNET) {
         fetchBSCBalances()
       }
       if (chainId === CHAIN_ID.MATIC) {
